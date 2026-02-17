@@ -1,98 +1,61 @@
-/* General Styling */
 * { box-sizing: border-box; }
 body {
     margin: 0;
-    font-family: 'Georgia', serif; /* Gives it that formal 'Example' look */
-    background-color: #ffffff;
-    color: #333;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #0d1117;
+    color: white;
 }
 
-/* Header */
+/* Neo Branding */
 .navbar {
-    background-color: #1a8a3d; /* Dark Forest Green */
-    color: white;
+    background-color: #161b22;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.3rem;
-    font-weight: bold;
+    border-bottom: 2px solid #ccff00;
 }
+.neo-glow { color: #ccff00; text-shadow: 0 0 10px #ccff00; font-weight: bold; }
+.logo { font-size: 1.3rem; letter-spacing: 1px; }
 
-/* Hero Section with Image */
+/* Side Menu */
+.side-nav {
+    height: 100%; width: 0; position: fixed; z-index: 100; top: 0; left: 0;
+    background-color: #161b22; overflow-x: hidden; transition: 0.4s; padding-top: 60px;
+}
+.side-nav a { padding: 15px 30px; text-decoration: none; font-size: 1.2rem; color: #ccff00; display: block; }
+.side-nav .closebtn { position: absolute; top: 10px; right: 25px; font-size: 36px; }
+
+/* Hero Section */
 .hero {
-    height: 60vh;
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                      url('https://images.unsplash.com/photo-1611288875055-3b83d4a4a5cf?auto=format&fit=crop&w=800&q=80');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    height: 50vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80');
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center; text-align: center;
 }
+.tagline { color: #ccff00; font-weight: bold; margin-top: 10px; }
 
-.overlay h1 {
-    color: white;
-    font-size: 2.8rem;
-    line-height: 1.1;
-    margin: 0;
+/* Locations & Cards */
+.container { padding: 20px; }
+.loc-list { margin-top: 15px; }
+.loc-card {
+    background: #1c2128; border: 1px solid #30363d; padding: 12px;
+    border-radius: 8px; display: flex; align-items: center; margin-bottom: 10px; cursor: pointer;
 }
+.dot { color: #ccff00; margin-right: 12px; font-size: 0.8rem; animation: blink 2s infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+.loc-card p { font-size: 0.8rem; color: #8b949e; margin: 0; }
 
-.tagline {
-    color: white;
-    margin-top: 20px;
-    font-weight: bold;
-    font-size: 1.1rem;
+/* Buttons & Inputs */
+.neo-select {
+    width: 100%; padding: 15px; background: #0d1117; color: #ccff00;
+    border: 1px solid #ccff00; border-radius: 4px; margin-bottom: 15px;
 }
-
-/* Action Portal */
-.portal {
-    padding: 30px 20px;
+.main-btn {
+    width: 100%; padding: 18px; background: #ccff00; color: #0d1117;
+    border: none; font-weight: bold; border-radius: 4px; cursor: pointer;
 }
-
-.instruction-text {
-    text-align: center;
-    color: #555;
-    margin-bottom: 25px;
-}
-
-.form-container {
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.dropdown {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0 20px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fcfcfc;
-}
-
-.submit-btn {
-    width: 100%;
-    background-color: #1a8a3d;
-    color: white;
-    border: none;
-    padding: 16px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
 .info-circle {
-    margin-top: 30px;
-    width: 25px;
-    height: 25px;
-    border: 2px solid #999;
-    color: #999;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
+    width: 30px; height: 30px; border: 2px solid #ccff00; color: #ccff00;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 20px;
 }
