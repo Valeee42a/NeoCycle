@@ -1,28 +1,12 @@
-function openNav() {
-    document.getElementById("sideMenu").style.width = "260px";
+function toggleNav(width) {
+    document.getElementById("sideMenu").style.width = width + "px";
 }
 
-function closeNav() {
-    document.getElementById("sideMenu").style.width = "0";
-}
-
-function toggleSearch() {
-    alert("NeoCycle: Opening Johor Bahru Waste Database...");
-}
-
-function showMap(area) {
-    alert("GPS: Navigating to " + area + " drop-off point.");
-}
-
-function showInfo() {
-    alert("NeoCycle v2.1\nStatus: Online\nRegion: Johor Bahru, Malaysia");
-}
-
-function processReport() {
-    const waste = document.getElementById("wasteCategory").value;
+function submitPickup() {
+    const waste = document.getElementById("wasteSelect").value;
     if (waste) {
-        alert("SUCCESS: Pickup request for " + waste + " submitted to local authorities.");
+        alert("SUCCESS: Request for " + waste + " pickup submitted. GPS coordinates locked.");
     } else {
-        alert("ERROR: Please select a waste type first.");
+        alert("Please select a waste category first.");
     }
 }
