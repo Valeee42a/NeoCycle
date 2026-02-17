@@ -3,72 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeoCycle | Johor Bahru Waste Portal</title>
+    <title>NeoCycle | JB Public Portal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="sideMenu" class="side-nav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="menu-links">
-            <a href="#">Public Home</a>
-            <a href="#">Collection Map</a>
-            <a href="#">Disposal Guide</a>
-            <a href="#">Contact Authorities</a>
-        </div>
+    <div id="sideMenu" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav(0)">&times;</a>
+        <a href="#">Home Portal</a>
+        <a href="#">JB Map</a>
+        <a href="#">Disposal Guide</a>
     </div>
 
     <header class="navbar">
-        <div class="menu-icon" onclick="openNav()">☰</div>
-        <div class="logo"><span class="neo-glow">Neo</span>Cycle</div>
-        <div class="search-icon" onclick="toggleSearch()">🔍</div>
+        <div class="menu-icon" onclick="toggleNav(250)">☰</div>
+        <div class="logo"><span class="neo">Neo</span>Cycle</div>
+        <div class="search-icon" onclick="alert('Searching JB Database...')">🔍</div>
     </header>
 
     <section class="hero">
-        <div class="hero-overlay">
+        <div class="hero-content">
             <h1>"Scan. <br>Report. <br>Save the Planet."</h1>
-            <p class="tagline">"Reboot the Earth: Manage Your Waste Today!"</p>
+            <p class="tagline">SYSTEM STATUS: ONLINE (JB)</p>
         </div>
     </section>
 
-    <main class="container">
-        <section class="locations">
-            <h2><span class="neo-glow">Live</span> Collection Points</h2>
-            <div class="loc-list">
-                <div class="loc-card" onclick="showMap('NMUC Perling')">
-                    <span class="dot">●</span>
-                    <div>
-                        <strong>NMUC City Campus</strong>
-                        <p>Jalan Persisiran Perling, JB</p>
-                    </div>
-                </div>
-                <div class="loc-card" onclick="showMap('Larkin Sentral')">
-                    <span class="dot">●</span>
-                    <div>
-                        <strong>Larkin Sentral Hub</strong>
-                        <p>Jalan Garuda, Larkin</p>
-                    </div>
-                </div>
+    <div class="container">
+        <h3 class="section-title">Collection Hubs</h3>
+        
+        <a href="https://maps.google.com/?q=NMUC+City+Campus" target="_blank" class="loc-card">
+            <span class="dot">●</span>
+            <div>
+                <strong>NMUC Skudai Hub</strong>
+                <p>Jalan Persisiran Perling, JB (Tap for GPS)</p>
             </div>
-        </section>
+        </a>
 
-        <section class="reporting">
-            <p class="label">Specify Waste Category:</p>
-            <select id="wasteCategory" class="neo-select">
-                <option value="" disabled selected>-- Select Type --</option>
+        <div class="report-box">
+            <select id="wasteSelect" class="neo-select">
+                <option value="" disabled selected>Select Waste Category...</option>
                 <option value="Plastic">Plastic Waste</option>
                 <option value="Metal">Metal Waste</option>
                 <option value="Glass">Glass Waste</option>
                 <option value="Food">Food Waste</option>
                 <option value="Handphone">Handphone (E-Waste)</option>
             </select>
-            <button class="main-btn" onclick="processReport()">SCHEDULE PICK UP</button>
-        </section>
-
-        <div class="footer-action">
-            <div class="info-circle" onclick="showInfo()">i</div>
+            <button class="main-btn" onclick="submitPickup()">SCHEDULE PICK UP</button>
         </div>
-    </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
