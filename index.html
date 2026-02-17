@@ -3,52 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeoCycle | Public Waste Portal</title>
+    <title>NeoCycle | Scan. Donate. Save.</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="navbar">
-        <div class="logo">NEO<span>CYCLE</span></div>
-        <div class="status">● System Active</div>
+        <div class="menu-btn">☰</div>
+        <div class="logo">NeoCycle</div>
+        <div class="search-btn">🔍</div>
     </header>
 
     <section class="hero">
-        <h1>Waste Reporting Portal</h1>
-        <p>Johor Bahru Digital Collection System</p>
+        <div class="overlay">
+            <h1>"Scan.<br>Donate.<br>Save the Planet."</h1>
+            <p class="tagline">"Reboot the Earth: Donate Your Old Phone Today!"</p>
+        </div>
     </section>
 
-    <main class="container">
-        <p class="instruction">Select the waste category for immediate collection or to find the nearest specialized bin:</p>
+    <main class="portal">
+        <p class="instruction-text"><i>Need to drop box of phone!!!</i></p>
         
-        <div class="waste-grid">
-            <div class="card">
-                <span class="icon">♻️</span>
-                <h3>Plastic & Metal</h3>
-            </div>
-            <div class="card">
-                <span class="icon">🍷</span>
-                <h3>Glass Waste</h3>
-            </div>
-            <div class="card">
-                <span class="icon">🍎</span>
-                <h3>Food Waste</h3>
-            </div>
-            <div class="card">
-                <span class="icon">📱</span>
-                <h3>E-Waste (Handphone)</h3>
-            </div>
+        <div class="form-container">
+            <label for="waste-select">Specify Waste Category:</label>
+            <select id="waste-select" class="dropdown">
+                <option value="" disabled selected>Select waste type...</option>
+                <option value="plastic">Plastic Waste</option>
+                <option value="metal">Metal Waste</option>
+                <option value="glass">Glass Waste</option>
+                <option value="food">Food Waste</option>
+                <option value="handphone">Handphone (E-Waste)</option>
+            </select>
+            
+            <button class="submit-btn">Schedule Pick Up</button>
         </div>
 
-        <div class="action-box">
-            <button class="btn">Report Illegal Dumping</button>
-            <button class="btn secondary">Request Bulk Pickup</button>
+        <div class="footer-icon">
+            <div class="info-circle">i</div>
         </div>
     </main>
-
-    <footer>
-        <p>Integrated with Malaysia Local Collection Services</p>
-    </footer>
 
 </body>
 </html>
