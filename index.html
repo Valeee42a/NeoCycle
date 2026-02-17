@@ -3,45 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeoCycle | Scan. Donate. Save.</title>
+    <title>NeoCycle | Johor Bahru Waste Portal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <div id="sideMenu" class="side-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="menu-links">
+            <a href="#">Public Home</a>
+            <a href="#">Collection Map</a>
+            <a href="#">Disposal Guide</a>
+            <a href="#">Contact Authorities</a>
+        </div>
+    </div>
+
     <header class="navbar">
-        <div class="menu-btn">☰</div>
-        <div class="logo">NeoCycle</div>
-        <div class="search-btn">🔍</div>
+        <div class="menu-icon" onclick="openNav()">☰</div>
+        <div class="logo"><span class="neo-glow">Neo</span>Cycle</div>
+        <div class="search-icon" onclick="toggleSearch()">🔍</div>
     </header>
 
     <section class="hero">
-        <div class="overlay">
-            <h1>"Scan.<br>Donate.<br>Save the Planet."</h1>
-            <p class="tagline">"Reboot the Earth: Donate Your Old Phone Today!"</p>
+        <div class="hero-overlay">
+            <h1>"Scan. <br>Report. <br>Save the Planet."</h1>
+            <p class="tagline">"Reboot the Earth: Manage Your Waste Today!"</p>
         </div>
     </section>
 
-    <main class="portal">
-        <p class="instruction-text"><i>Need to drop box of phone!!!</i></p>
-        
-        <div class="form-container">
-            <label for="waste-select">Specify Waste Category:</label>
-            <select id="waste-select" class="dropdown">
-                <option value="" disabled selected>Select waste type...</option>
-                <option value="plastic">Plastic Waste</option>
-                <option value="metal">Metal Waste</option>
-                <option value="glass">Glass Waste</option>
-                <option value="food">Food Waste</option>
-                <option value="handphone">Handphone (E-Waste)</option>
-            </select>
-            
-            <button class="submit-btn">Schedule Pick Up</button>
-        </div>
+    <main class="container">
+        <section class="locations">
+            <h2><span class="neo-glow">Live</span> Collection Points</h2>
+            <div class="loc-list">
+                <div class="loc-card" onclick="showMap('NMUC Perling')">
+                    <span class="dot">●</span>
+                    <div>
+                        <strong>NMUC City Campus</strong>
+                        <p>Jalan Persisiran Perling, JB</p>
+                    </div>
+                </div>
+                <div class="loc-card" onclick="showMap('Larkin Sentral')">
+                    <span class="dot">●</span>
+                    <div>
+                        <strong>Larkin Sentral Hub</strong>
+                        <p>Jalan Garuda, Larkin</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="footer-icon">
-            <div class="info-circle">i</div>
+        <section class="reporting">
+            <p class="label">Specify Waste Category:</p>
+            <select id="wasteCategory" class="neo-select">
+                <option value="" disabled selected>-- Select Type --</option>
+                <option value="Plastic">Plastic Waste</option>
+                <option value="Metal">Metal Waste</option>
+                <option value="Glass">Glass Waste</option>
+                <option value="Food">Food Waste</option>
+                <option value="Handphone">Handphone (E-Waste)</option>
+            </select>
+            <button class="main-btn" onclick="processReport()">SCHEDULE PICK UP</button>
+        </section>
+
+        <div class="footer-action">
+            <div class="info-circle" onclick="showInfo()">i</div>
         </div>
     </main>
 
+    <script src="script.js"></script>
 </body>
 </html>
